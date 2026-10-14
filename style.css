@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #0fe24b;
-    max-width: 700px;
+    background-color: #aaa7a7;
+    max-width: 500px;
     margin: 40px auto;
     padding: 28px;
 }
@@ -9,7 +9,7 @@ body {
 header,
 form,
 ul#shopping-list li {
-    background: #5d0505;
+    background: #055d11;
     padding: 20px 18px;
     border-radius: 10px;
     margin-bottom: 22px;
@@ -38,7 +38,7 @@ label {
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 18px;
     padding: 22px;
 }
@@ -46,7 +46,7 @@ form {
 input {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #690f0f;
+    border: 1px solid #0f4169;
     border-radius: 8px;
     box-sizing: border-box;
     font-size: 1rem;
@@ -62,17 +62,17 @@ button {
 
 #clear-list {
     background-color: #e53e3e;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #clear-list:disabled {
-    background-color: #cbd5e0;
+    background-color: #006ee3;
     cursor: not-allowed;
 }
 
 form button {
-    background-color: #2b6cb0;
-    color: white;
+    background-color: #003ee8;
+    color: rgb(221, 255, 0);
 }
 
 ul#shopping-list {
