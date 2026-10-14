@@ -15,17 +15,27 @@ const purchasedTotal = document.getElementById("purchased-total");
 const listCountSpan = document.getElementById("list-count");
 const clearListBtn = document.getElementById("clear-list");
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function render() {
   let totalCost = 0;
 
   shoppingListUl.innerHTML = shoppingList
     .map((item, index) => {
       const price = Number(item.price) || 0;
+      const safeName = escapeHtml(item.name);
       if (item.purchased) totalCost += price;
 
       return `
         <li style="${item.purchased ? 'text-decoration: line-through; opacity: 0.6;' : ''}">
-          <span>${item.name} - Ksh ${price.toFixed(2)}</span>
+          <span>${safeName} - Ksh ${price.toFixed(2)}</span>
           <div>
             <button class="buy-btn" data-index="${index}" type="button">${item.purchased ? "Undo" : "Buy"}</button>
             <button class="edit-btn" data-index="${index}" type="button">Edit</button>
@@ -65,8 +75,12 @@ addForm.addEventListener("submit", (e) => {
 });
 
 clearListBtn.addEventListener("click", () => {
-  shoppingList = [];
-  render();
+  if (shoppingList.length === 0) return;
+
+  if (confirm("Are you sure you want to clear your whole list?")) {
+    shoppingList = [];
+    render();
+  }
 });
 
 shoppingListUl.addEventListener("click", (e) => {
@@ -92,13 +106,6 @@ shoppingListUl.addEventListener("click", (e) => {
       item.price = newPrice;
     }
 
-    render();
-  }
-});
-
-clearListBtn.addEventListener('click', () => {
-  if (confirm("Are you sure you want to clear your whole list?")) {
-    shoppingList = [];
     render();
   }
 });
