@@ -4,12 +4,13 @@ body {
     max-width: 500px;
     margin: 40px auto;
     padding: 28px;
+    justify-content: flex-start;
 }
 
 header,
 form,
-ul#shopping-list li {
-    background: #055d11;
+ul li {
+    background: #3d8046;
     padding: 20px 18px;
     border-radius: 10px;
     margin-bottom: 22px;
