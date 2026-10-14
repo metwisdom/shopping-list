@@ -1,70 +1,81 @@
-/* --- Global Layout --- */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #0fe24b;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 28px;
 }
 
-/* --- Content Cards & Blocks --- */
-header, form, ul#shopping-list li {
-  background: #ffffff;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+header,
+form,
+ul#shopping-list li {
+    background: #5d0505;
+    padding: 20px 18px;
+    border-radius: 10px;
+    margin-bottom: 22px;
 }
 
-/* --- Inline Alignments (Headers & List Items) --- */
-div, ul#shopping-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+div,
+ul#shopping-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-/* --- Text Typography --- */
 header strong {
-  display: block;
-  font-size: 24px;
-  color: #2b6cb0;
+    display: block;
+    font-size: 24px;
+    color: #000000;
 }
 
 label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-/* --- Form Layout & Input Fields --- */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px;
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #690f0f;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
-/* --- Universal Button Styling --- */
 button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-#clear-list { background-color: #e53e3e; color: white; }
-#clear-list:disabled { background-color: #cbd5e0; cursor: not-allowed; }
-form button { background-color: #2b6cb0; color: white; }
+#clear-list {
+    background-color: #e53e3e;
+    color: white;
+}
 
-/* --- Dynamic Target List Clean-up --- */
+#clear-list:disabled {
+    background-color: #cbd5e0;
+    cursor: not-allowed;
+}
+
+form button {
+    background-color: #2b6cb0;
+    color: white;
+}
+
 ul#shopping-list {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
